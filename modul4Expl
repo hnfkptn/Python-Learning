@@ -1,0 +1,76 @@
+#First Example
+"""sayi = int(input("Lütfen bir sayı giriniz:"))
+if(sayi < 0):
+    print("Girdiğiniz sayı negatiftir.")
+elif(sayi == 0):
+    print("Girdiğiniz sayı sıfırdır.")
+elif(sayi > 0):
+    print("Girdiğiniz sayı pozitiftir.")"""
+
+#Second Example
+"""not1 = int(input("1. sınav sonucunu giriniz:"))
+not2 = int(input("2. sınav sonucunu giriniz."))
+ortalama = (not1 + not2) / 2
+if(ortalama < 50):
+    print("Geçer not alamadınız")
+if(ortalama >= 50):
+    print("Dersten geçer not aldınız.")"""
+
+#Third Example
+"""sayi1 = int(input("Birinci sayıyı giriniz:"))
+sayi2 = int(input("İkinci sayıyı giriniz:"))
+if(sayi1 > sayi2):
+    print("Birinci sayı ikinci sayıdan büyüktür.")
+if(sayi1 == sayi2):
+    print("İki sayı birbirine eşittir")
+if(sayi1 < sayi2):
+    print("Birinci sayı ikinci sayıdan küçüktür.")"""
+
+#Forth Example
+"""sayi = int(input("1-4 arasında bir sayı giriniz:"))
+if (sayi < 1 or sayi > 4):
+    print("Sayı sınırları aşılmıştır.")
+elif(sayi == 1):
+    print("İlkbahar mevsimi")
+elif(sayi == 2):
+    print("Yaz mevsimi")
+elif(sayi == 3):
+    print("Sonbahar mevsimi")
+elif(sayi == 4):
+    print("Kış mevsimi")"""
+
+#Fifth Example
+"""kenar1 = int(input("Birinci kenar uzunluğunu giriniz:"))
+kenar2 = int(input("İkinci kenar uzunluğunu giriniz:"))
+kenar3 = int(input("Üçüncü kenar uzunluğunu giriniz:"))
+kenar4 = int(input("Dördüncü kenar uzunluğunu giriniz:"))
+if (kenar1 == kenar2 == kenar3 == kenar4):
+    print("Kare")
+elif (kenar1 == kenar2 and kenar3 == kenar4 or kenar1 == kenar3 and kenar2 == kenar4 or kenar1 == kenar4 and kenar2 == kenar3):
+    print("Dikdörtgen")
+else:
+    print("Diğer dörtgen")"""
+
+#Sixth Example
+"""kenar1 = int(input("Birinci kenar uzunluğunu giriniz:"))
+kenar2 = int(input("İkinci kenar uzunluğunu giriniz:"))
+kenar3 = int(input("Üçüncü kenar uzunluğunu giriniz:"))
+if (kenar1 == kenar2 == kenar3):
+    print("Eşkenar üçgen")
+elif (kenar1 == kenar2 or kenar1 == kenar3 or kenar2 == kenar3):
+    print("İkizkenar üçgen")
+else:
+    print("Çeşitkenar üçgen")"""
+
+#Seventh Example
+"""kilo = float(input("Kilonuzu giriniz:"))
+boy = float(input("Boyunuzu giriniz:"))
+BKE = kilo / (boy**2)
+if (BKE < 18,5):
+    print("Zayıf")
+elif (BKE <= 25):
+    print("Normal")
+elif (BKE <= 30):
+    print("Kilolu")
+elif (BKE > 30):
+    print("Obez")"""

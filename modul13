@@ -1,0 +1,68 @@
+#HATA YAKALAMA VE İSTİSNALAR
+
+"""while True:
+    x = input("Bir sayı giriniz:")
+    if not x:
+        break
+    print(float(x)*2)"""
+
+"""Hata çeşitleri:
+1. programcı hatası (error)
+2. program kusurları veua mantık hatası (bug)
+3. istisnalar (exception)"""
+
+#PROGRAMCI HATASI:
+"""geliştiriciden kaynaklanır. bu hata giderilmeden program çalışmaz.
+a. SyntaxError
+b. ValueError
+c. IndexError
+d. ZeroDivisionError
+e. NameError
+f. IOError
+g. TypeError
+h. KeyError"""
+
+#PROGRAM HATASI:
+"""fark edilmesi zordur. program çalışmayı durdurur ama işlemleri doğru yapmaz.
+örneğin karenin alanı hesaplamasında alan hesaplanır ama doğru sonuç verilmez."""
+
+#İSTİSNALAR (EXCEPTION):
+"""programın çalışması istisna değerlere uğrayıp uğramamasıyla ilgilidir."""
+
+#Try-Except Blokları
+"""try: bir blok içerisinde hata olması durumunda python except bloğuna atlar
+ve oradaki kodlar çalışır. try bloğuna hata ile karşılaşılabilecek kodlar alınır.
+except: try bloğunda herhangi bir hata olursa except bloğuna atlanır. bir hata
+yoksa except bloğu çalıştırılmaz."""
+
+"""try:
+    s1 = int(input("Bir sayı girin:"))
+    s2 = int(input("Bir sayı girin:"))
+    sonuc = s1/s2
+    print("Sonuç: ", sonuc)
+except ZeroDivisionError:
+    print("Payda sıfır olamaz:")
+except ValueError:
+    print("Sayısal bir değer girin")
+except:
+    print("Beklenmeyen bir hata oluştu")"""
+
+"""try except as: kullanıcıya python'a ait hata mesajı gösterilmek istendiğinde "as" kullanılır.
+try:
+    s1 = int(input("Birinci Sayı :"))
+    sonuc = s1**2
+    print("Sonuc :",sonuc)
+except ValueError as hata:
+    print('Lütfen sayı giriniz')
+    print(hata)
+
+Try except else: oluşabilecek hatalar adım adım ayıklanmak isteniyorsa “else” kullanılır.
+try:
+    s1 = int(input("Birinci Sayı :"))
+    except ValueError:
+        print("sayı girmediniz")
+else:
+    try:
+        print(10/s1)
+    except ZeroDivisionError:
+        print('sayı sıfıra bölünemez')"""

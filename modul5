@@ -1,0 +1,113 @@
+#LİSTE VERİ TİPİ
+"""meyve = "erik"
+meyve = "ayva - " + meyve[0:] #bu şekilde ekleme yapabilmek için aynı veri tipinden olması gerekir.
+print(meyve)
+liste = ["a" , "b"]
+liste[1] = 2 #bu şekilde listenin içindeki bir elemanı değiştirebiliriz.
+print(liste)
+liste2 = [] , liste3 = list() #boş listelerdir
+liste = [1 , 2 , 3 , 4 , 5]
+öge = liste[1 : 3 : 2] #1. indis dahil 3. indis dahil değildir. son değer atlama sayısıdır.
+print(öge)"""
+#indis numarası olarak verilen sayının negatif olması durumu sondan başa sıra numarasını verir.
+#"-1." indis listenin son elemanını, "-2." indis listenin sondan birinci elemanını verir.
+
+#TEMEL LİSTE METOTLARI
+#APPEND
+"""Listeye yeni eleman ekleme işlemini yapar. Bu metot ile listeye sadece bir
+eleman eklenebilir ve eklenen eleman listenin sonunda yer alır
+takimlar = ["galatasaray" , "fenerbahçe" , "beşiktaş"]
+takimlar.append("trabzonspor")
+print(takimlar)"""
+#CLEAR
+"""Listeyi değil içindeki tüm ifadeleri silmeye yarar.
+liste =["ayva","nar","kiraz","kayısı","Üzüm"]
+liste.clear()
+print(liste)"""
+#COPY
+"""Listeden listeye kopyalama işlevine yaramaktadır.
+iller1 =["konya","karaman","kocaeli","kayseri","kahramanmaraş"]
+iller2=[]
+iller2 = iller1.copy()
+print(iller2)"""
+#COUNT
+"""Listenin içinde sorgulanan elemandan kaç adet olduğunu bulmamızı sağlar.
+takimlar = ["galatasaray" , "fenerbahçe" , "beşiktaş"]
+print(takimlar.count("fenerbahçe"))"""
+#EXTEND
+"""Listeler arası genişletme işlevini görür
+kus1=["bıldırcın","papağan","kartal","akbaba","şahin"]
+kus2=["baykuş","muhabbet"]
+kus1.extend(kus2)
+print(kus1)"""
+#INDEX
+"""Listedeki elemanları almamızı sağlar.
+sebzeler =["lahana","marul","pırasa","ıspanak","fasulye"]
+print(sebzeler.index("ıspanak"))"""
+#INSERT
+"""Listenin istenilen indis numarasına eleman eklenebilir
+sebzeler =["lahana","marul","pırasa","ıspanak","fasulye"]
+sebzeler.insert(2,"patlıcan")
+print(sebzeler)"""
+#POP
+"""Listedeki elemanın indisi ile silme işlem yapar. indis belirtmediğinizde ise
+varsayılan olarak listenin son elemanını siler. Ayrıca bu metot silinen elemanı ekrana yazmaktadır.
+sebzeler =["lahana","marul","pırasa","ıspanak","fasulye"]
+sebzeler.pop(2)
+print(sebzeler)"""
+#REMOVE
+"""Listede istenilen elemanın değerini yazarak silme işlemi yarar.
+sehirler =["adana","ağrı","bursa","konya","ankara"]
+sehirler.remove("konya")
+print(sehirler)"""
+#SORT
+"""Listenin elemanlarını alfabetik olarak sıralar.
+isimler=["elif","ayşe","kemal","kaan","hafsa"]
+isimler.sort()
+print(isimler)"""
+#REVERSE
+"""Bu metot sort metodunun aksine listedeki elemanları ters alfabetik olarak sıralar
+sayilar=[10,20,30,40,50,60,70]
+sayilar.reverse()
+print(sayilar)"""
+#DEL
+"""Liste içerisinden bir elemanı silmek için kullanılır. Silme işlemi indis numarasına göre yapılmaktadır.
+takimlar = ["galatasaray" , "fenerbahçe" , "beşiktaş"]
+del takimlar[2]
+print(takimlar)"""
+#LEN()
+"""a="Galatasaray"
+print(len(a))"""
+
+#İÇ İÇE LİSTELER
+"""Listenin elemanları bir başka liste olabilir.
+birinciListe = [1,2,3]
+ikinciListe = ['a','b','c']
+ucuncuListe= [40,50,60]
+sonListe= [birinciListe,ikinciListe,ucuncuListe]
+print(sonListe)"""
+
+#VERİ TİPLERİNDE DÖNÜŞÜMLER
+"""liste=[1,2,3,4,5,'ankara']
+print(liste)
+liste[0]=str("kocaeli")
+liste[2]=float(1.5)
+liste[5]=int(20)
+print(liste)"""
+#Herhangi bir string türünde veriyi parçalayarak da liste oluşturulabilir.
+"""meyve="çocukluğunda en sevdiğin meyveydi kivi"
+liste=list(meyve)
+print (liste)"""
+
+#SPLİT() !!!!!!!!!!!!!!!!!!! BUNU YENİDEN ÇALIŞ
+"""split() metodu, listeyi belirtilen ayıracı kullanarak yeniden döndürmeye yarar. Yani split(  ) karakter
+dizilerini istenen şekilde böler.
+bilgi=input("bilgilerinizi araya virgül koyarak yazınız: ")
+liste=bilgi.split(",")
+print(liste)
+cumle="23 nisan herkese mutlu olsun"
+kelimeler=cumle.split(" ")
+print(cumle.split(" "))
+print("cümlenizde ",len(kelimeler),"adet kelime vardır")"""
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!Modül sonu örenkleri yap

@@ -1,0 +1,49 @@
+#Pythonda bulunan pek çok hazır fonksiyona yerleşik fonksiyon denir.
+#TEMEL FONKSİYONLAR - fonskiyonlarda parantez işareti kullanılır
+#INPUT() - PRİNT()
+''' kullanıcıdan girdi almak için input() fonk. kullanılır.
+konsola veri yazdırmak için de print() fonk. kullanılır.
+string değerler yazdırmak için parantez içinde değeri tek tırnak ('değer'), çift tırnak ("değer") veya üç çift tırnak ("""değer""") şeklinde yazmalıyız.
+parantez içinde kullanılan değere argüman denir.
+print('Türkiye'nin en kalabalık ili İstanbul'dur') gibi kullanımlarda string değeri farklı şekillerde yazabiliriz.
+python dilinde input() fonksiyonuna girilen değer print() fonksiyonuna ihtiyaç olmadan yazdırılabilir.
+isim=input("isminizi giriniz: ")
+print("merhaba! ",isim)
+input() fonksiyonu aldığı değerleri varsayılan olarak string değere atar.
+başka bir türde veri girdisi yapmak için o veri tipine dönüştürülmelidir.
+a=int(input("Bir sayı giriniz: "))'''
+#KAÇIŞ PARAMETRELERİ
+#TERS TAKSİM (\)
+'''kendisinden sonra gelen işaretin dikkate alınmaması gerektiği anlamını verir.
+print('Bursa\'nın iskenderi meşhurdur.')'''
+#ALT SATIR BAŞI (\n)
+'''alt satıra inmek için kullanılır
+print("1. satır\n2. satır\n3. satır"'''
+#SEKME (\t)
+'''boşluk bırakılmasına yarar.
+print("pazartesi \tsalı \tçarşamba")'''
+#END()
+'''print() fonksiyonu ile ekrana gönderilen değerlerin sonunda hangi işlemin yapılacağını belirtir.
+a end parametresinin içerisinde standart olarak \n parametresi vardır.
+end() fonksiyonuna atanan değer ile varsayılan değer değiştirilmiş olur.
+print("Merhaba!")
+print("Python")
+print("Merhaba!",end=" ")
+print("Python")'''
+#SEP()
+'''birden fazla argüman içeren fonksiyonlarda her bir argüman arasında işlem yapılmasını sağlar
+print("pazartesi","salı","çarşamba","perşembe","cuma")
+print("pazartesi","salı","çarşamba","perşembe","cuma",sep="-")'''
+#FORMAT()
+'''string değerlerin içine önceden tanımlanmış aynı veya farklı veri türlerinden değerler yazmak istediğimizde kullanılır.
+bu daha okunaklı bir kod yazmaya yarar.
+#işlemi bu şekilde de yapabiliriz ancak bu kullanımda hata yapmak daha kolaydır.
+a=5
+b=6
+c=9
+print("girdiğiniz",a, b, "ve",c,"değerlerinin toplamı: ",a+b+c,"dir")
+#süslü parantezlerin içine 0'dan başlayarak sayılar yazarak hangi sıradaki değerin yazılacağı belirlenebilir.
+a=5
+b=6
+c=9
+print("girdiğiniz {} , {} ve {} değerlerinin toplamı= {} dir".format(a,b,c,a+b+c))'''

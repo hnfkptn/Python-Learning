@@ -1,0 +1,177 @@
+#DÖNGÜLER
+#Tekrarlama işlemi belirli sayıda olursa for döngü yapısı, belirli koşullara bağlı tekrar söz konusu ise while döngü yapısı tercih edilir
+
+#WHİLE DÖNGÜSÜ
+"""Koşul gerçekleştikçe çalışan bir döngü çeşitidir.
+Genellikle döngünün kaç defa çalışacağı belirli değilse while döngüsü tercih edilir.
+Blok yapısı kullanılmaktadır.
+toplam=0
+i=1
+while i<=100:
+    toplam=toplam+i
+    i=i+1
+print("sayıların toplamı",toplam)"""
+"""Break ifadesi döngü sürekli çalışırken istenilen bir anda döngüden çıkmak için kullanılır.
+
+i=1
+while True:
+    print(i)
+    i+=1
+    if i==6:
+        break
+print("döngü sonlandı")
+
+alisverisListesi = []
+while 1:
+    urun = input("ürün harfi giriniz:")
+    if urun == "q":
+        break
+    alisverisListesi.append(urun)
+
+sayi = 70
+sayac = 0
+print("1-100 arasın bir sayı tuttum tahmin et")
+while True:
+    sayac += 1
+    cevap = int(input("1-100 arası bir sayı giriniz:"))
+    if(sayi < cevap):
+        print("Daha küçük bir sayı girmelisin")
+    elif(sayi > cevap):
+        print("Daha büyük bir sayı girmelisin")
+    else:
+        print("Tebrikler tuttuğum sayıyı bildin.")
+        break
+print("Tuttuğum sayıyı {} seferde bulabildin." ,format(sayac))
+
+sayi = int(input("Bir sayı giriniz:"))
+sonuc = 1
+while sayi != 0 or sayi < 0 :
+    sonuc = sayi * sonuc
+    sayi -= 1
+print (sonuc)
+
+sayi = int(input("Bir sayı giriniz:"))
+i = 1
+sonuc = 1
+while i <= sayi:
+    sonuc = sonuc * i
+    i += 1
+print (sonuc)"""
+
+#FOR DÖNGÜSÜ
+"""döngünün tekrar sayısı programcı tarafından belirlenmiş veya öngörülmüş ve belli ise kullanılır.
+while döngüsü genellikle sonsuz döngülerle kullanılıp istenilen anda döngüden çıkılabilir.
+for döngüsü daha çok belirli sayıdaki işlemler için kullanılır.
+Python'da iterasyon denilen önemli bir özellik vardır.
+iterasyon işlemi sayesinde karakter diziler ve listeler üzerinde gezinme işlemi
+yani ilk elemandan son elemana kadar işlem yapılabilmektedir.
+for döngüsünü kullanmak için in işlecinden faydalanmak gerekir.
+Genellikle listeler veya karakter dizileri üzerinde işlem yapılmak istenildiğinde
+yani iterasyon yapılacağı zaman for döngüsü kullanılmaktadır.
+isim = "mustafa"
+for i in isim:
+    print(i, end = ",")
+i = 0
+while i < len(isim) :
+    print ( isim[i], end = ",")
+    i = i + 1
+
+yazi = input("Bir metin giriniz:")
+harf = input("Bir harf giriniz:")
+sayac = 0
+for i in yazi:
+    if i == "a":
+        sayac = sayac + 1
+print("cümle içerisinde geçen {} harfi sayısı: {}" .format(harf, sayac))
+
+yazi = "mamamamamamakkakakakakakakakjajajajajajajhahahahahaha"
+sesli = "aeiıoöüu"
+sayi = 0
+for i in yazi:
+    if i in sesli:
+        sayi += 1
+        print(i, end=",")
+print(sayi)
+
+yazi1 = "jfkjfşfaknfjlfrhrfwnjlvflnjvfohrfşndvj"
+yazi2 = "pewğwündsfljvm.aieqogrşpılbjçjlb"
+sayac = 0
+for i in yazi1:
+    if not i in yazi2:
+        print(i, end = ",")
+        sayac += 1
+print(sayac)
+
+metin = "chvyfgbjuhlnıkjoşkpjnkbjöhvmjg"
+for i in metin:
+    print("i = ", i)
+
+sayilar = [1, 2, 3, 4, 497489, 930938983478398739, -84838]
+toplam = 0
+for i in sayilar:
+    toplam = toplam + i
+print (toplam/len(sayilar))
+
+sayilar = [23, 57, 87, 98, 89, -45, 7890]
+for i in sayilar:
+    if i % 3 == 0:
+        print(i, end = ",")
+        
+liste = [[3,4],[7,8],[10,11],[14,15]]
+for i in liste:
+    print(i,end=",")
+
+liste = [[3,4],[7,8],[10,11],[14,15]]
+for i,j in liste:
+    print(i,end=",")
+    print(j,end=",")   
+
+liste = [[3,4],[7,8],[10,11],[14,15]]
+for i in liste:
+    for j in i:
+    print(j,end=",")"""
+
+#RANGE FONKSİYONU
+"""for döngüsüyle belirli değerler arasında döngü kurulmak istenirse range fonksiyonu kullanılmalıdır.
+range fonksiyonu bir sayı dizisi oluşturur ve bu sayede oluşturulan dizi üzerinde for döngüsünün iterasyon yapılması sağlanır.
+print(*range(1,20,3))
+ilk parametre başlangıç değerini, ikinci parametre bitiş değerini ve üçüncü parametre atlama değerini verir.
+
+toplam = 0
+ilk = int(input())
+son = int(input())
+atlama = int(input())
+for i in range(ilk,son,atlama):
+    toplam += i
+print("Girdiğini sayıların toplamı: ",toplam)
+
+toplam = 0
+for i in range(0,20,-1):
+    toplam += i
+
+for i in range(0,100,5):
+    print(i, end = ",")
+
+satir = int(input("Satır sayısını giriniz:"))
+sutun = int(input("Sütun sayısını giriniz:"))
+for i in range(satir):
+    for j in range(sutun):
+        print(j, end = " ")
+    print( )"""
+
+#CONTINUE İFADESİ
+"""Döngülerde kullanılan continue ifadesi döngünün baştan sona kadar çalışmasını
+engellemeyen ancak belirli durumlar sağlandığında o adımı atlamamızı saĞlayan yapılardır.
+Döngüyü sonlandırmaz ancak başa sarmasına sebep olur.
+
+for i in range(1,7):
+    if i % 2 == 0:
+        continue
+    print(i)"""
+
+#NESTED LOOP
+"""ilk = range(8)
+son = range(4)
+for i in ilk:
+    for j in son:
+        print(i,j)"""

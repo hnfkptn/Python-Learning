@@ -1,0 +1,41 @@
+#FONKSİYONLAR
+"""
+def asal (sayi):
+    sayac = 2 #tüm sayılar 1'e bölüneceinden 2 ile başlatmalıyız.
+    while sayac <= sayi / 2: #bir sayının yarısından az tam böleni yoksa yarısından büyük tam böleni de olamaz.
+        if sayi % sayac == 0:
+            return False
+        sayac += 1
+    return True
+print(asal(13))
+
+def faktoriyel (sayi):
+    sonuc = 1
+    i = 1
+    while sayi >= i:
+        sonuc *= sayi
+        sayi -= 1
+    return sonuc
+print(faktoriyel(5))
+
+def faktoriyel (sayi):
+    sonuc = sayi
+    if sayi <= 1:
+        return 1
+    return (sonuc * faktoriyel(sayi - 1))
+print(faktoriyel(5))
+
+def ortalamaBul(liste):
+   toplam = 0
+   for i in liste:
+      toplam += i
+   ortalama = toplam / adet
+   return ortalama
+adet = int(input("Ortalaması hesaplanacak sayı sayısını giriniz:"))
+liste = []
+i = 0
+while i < adet:
+   sayi = int(input("Diziye eklenecek sayıyı giriniz:"))
+   liste.append(sayi)
+   i += 1
+print(ortalamaBul(liste))"""

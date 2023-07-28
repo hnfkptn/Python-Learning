@@ -1,0 +1,102 @@
+#İLERİ SEVİYE VERİ YAPIILARI
+
+#onluk tabandaki bir sayıyı ikilik tabana çevirme:
+"""bin(18)"""
+
+#onluk tabandaki bir sayıyı onaltılık tabana çevirme:
+"""hex(18)"""
+
+#SAYILAR ÜZERİNDE UYGULANABİLEN FONKSİYONLAR
+#abs() fonksiyonu:
+"""ingilizcede 'mutlak' anlamına gelen absolute adlı sözcüğün kısaltmasıdır.
+sayının mutlak değerini almak için kullanılır.
+abs(-10)
+abs(345)
+abs(-3.4)"""
+
+#round() fonksiyonu:
+"""bir sayıyı belirli kriterler göre yukarı ve aşağı yuvarlamak için kullanılır.
+round(5.7)
+round(5.3)
+round(5.5) #6'ya yuvarlanır"""
+
+#chr() fonksiyonu:
+"""kendisine parametre olarak verilen bir tam sayının karakkter olarak (ASCII)
+karşılığını verir.
+chr(65)
+chr(100)"""
+
+#max() fonksiyonu:
+"""bir dizi içindeki sayıların en büyüğünü verir.
+max(3,4,5,6,8,12)
+liste[4,67,2,24]
+max(liste)"""
+
+#min() fonksiyonu:
+"""max() fonksiyonunun tersidir.
+min(4,7,1,2,9)
+liste=[4,7,6,9,3]
+min(liste)"""
+
+#pow() fonksiyonu:
+"""power sözcüğünün kısaltmasından türetilmiştir.
+bir sayının üssünü almak için kullanılır.
+pow(sayı,üs)
+pow(3,4)
+pow(6.2,7)"""
+
+#sum() fonksiyonu:
+"""dizi içindeki değerlerin toplamını bulmamızı sağlar.
+değerler liste ya da tupple türünde olmalıdır.
+sum([5,9,2.3,-7])"""
+
+#KARAKTER DİZİLERİ ÜZERİNDE UYGULANABİLEN METOTLAR:
+#replace() fonksiyonu:
+"""bir karakter dizisi içindeki karakteri başka karakterlerle değiştirmeyi ssağlar.
+iki parametre alır.
+replace("değişecek karakter","yerine gelecek karakter")
+a = "qython"
+a.replace("q","p")"""
+
+#split() fonksiyonu:
+"""bir karakter dizisi verilen kurala göre bölme işlemi yapar.
+eğer bir parametre verilmezse boşluk parametresine göre yapar.
+a = "Ponyler dünyası ponyville"
+a.split()
+b= "T.B.M.M."
+b.split(".")"""
+
+#upper() ve #lower fonksiyonları:
+"""karakter dizilerini büyük (upper()) veya küçük (lower()) harfe çevrir.
+"Merhaba dünya".upper()
+"MERHABA DÜNYA".lower()"""
+
+#join() fonksiyonu:
+"""split fonksşyonunun ters işlemini yapar.
+Liste içerisinde bulunan karakter dizilerini verilen kurala göre birleştirir.
+"-".join(["merhaba","dünya"])"""
+
+#capitalize() fonksiyonu:
+"""karakter dizilerinin sadece ilk harfini büyük yapmak için kullanılır.
+a = "princess selestia"
+a.capitalize()"""
+
+#find() fonksiyonu:
+"""karakter dizisi içindeki bir karakterin konumunu sorgular.
+bulduğu ilk değeri döndürür.
+a = "i am legend"
+a.find("e")"""
+
+#rfind() fonksiyonu:
+"""karakter dizisi içindeki bir karakterin konumunu 0. indeksten değil
+sağdan başlayarak yapar.
+a = "i am legend"
+a.find("e")"""
+
+#isdigit() fonksiyonu:
+"""karakter dizisinin bir sayısal değer olup olmadığını kontrol eder.
+eğer tüm karakterler rakamdan oluşuyorsa true, değilse false döndürür.
+metin1 = "ak akçe kara gün içindir"
+metin2 = "1 elin nesi var 2 elin sesi var"
+print(metin1.isdigit())
+print(metin2.isdigit())"""

@@ -1,0 +1,128 @@
+#SÖZLÜKLER VE DEMETLER
+
+#SÖZLÜKLER
+"""sözlük yapısı json verilerinde kullanılmaktadır.
+sözlüğün içindeki her bir değer indeks olarak değil, anahtar ve değer olarak tutulur.
+anahtar değer çiftleri virgülle ayrılarak bir ögeyi oluştururlar.
+değer kısmı bütün veri türünü içerebilir fakat anahtar ksımı sadece string ve integer tipinde olabilir.
+değerler herhangi bir veri türüne ait olabilir fakat anahtar benzersiz olmalıdır.
+"""
+
+"""SÖZLÜK OLUŞTURURKEN DİKKAT EDİLMESİ GEREKENLER:
+1. iki noktayı ve virgülü nereye koyduğumuz
+2. ögelerimizi tanımlarken ayraç parantez yerine "()" küme parantezi kullanmamız "{}"
+3. anahtar değer ilişkisi
+4. anahtar değer tanımlarken tırnak işareti kullanmak
+
+personalInformation = {"isim" : "ali" , "telefon" : "12345678" , "e-posta" : "ali@abc.com"}
+print(personalInformation)
+
+#boş sözlük oluşturma
+sozluk1 = {}
+#integer tipinde oluşturulan keyler
+sozluk2 = {1 : "adana" , 2 : "bursa"}
+#string ve integer veri tipinde oluşturulan keyler
+sozluk3 = {'isim' : 'ali', 1 : [5, 4, 3]}
+#dict fonksiyonu
+sozluk4 = dict({1 : "erik" , 2 : "ayva"})"""
+
+#Sözlük ve anahtar değerine erişim
+"""iller = {"konya" : "42" , "istanbul" : "34"}
+print(iller.keys()) #sözlükteki anahtarı bize yazdırır
+print(iller.values()) #sözlükteki değerleri bize yazdırır"""
+
+#Sözlükte eleman seçme, değiştirme, ekleme işlemleri
+"""Python'da sözlükler ögelerine erişmek için anahtarlarını kullanırlar.
+bu anahtarlar indeksler üzerinde gösterilir.
+anahtarlar köşeli parantez içinde ya da get() fonksiyonu ile kullanılabilir.
+get() fonksiyonunda anahtar bulunmazsa KeyError yerine "None" değer döndürür.
+meyve = {"adı" : "elma" , "türü" : "granny smith" , "kg" : 20}
+print(meyve["adı"])
+print(meyve["kg"])
+meyve["kg"] = 30 #sözlükte eleman değiştirme
+print(meyve["kg"])
+meyve["rengi"] = "yesil" #sözlüğe eleman ekleme
+print(meyve)
+
+sozluk = {"ad" : "zeze" , 1 : [3,4,5]}
+print(sozluk["ad"])
+print(sozluk.get(1))"""
+
+#Sözlükte eleman silem işlemi
+"""kisi = {"isim" : "ela" , "soyisim" : "fındık"  , "yaş" : 19 , "konum" : "istanbul"}
+print(kisi)"""
+#pop() metodu, ögeyi belirten anahtar adıyla kaldırmak için kullanılır.
+"""kisi.pop("yaş")
+print(kisi)"""
+#popitem() metodu, eklenen son ögeyi kaldırmak için kullanılır.
+"""kisi.popitem()
+print(kisi)"""
+#del(parametre) anahtar sözcüğü, belirtilen anahtar adına sahip ögeyi kaldırmak için kullanılır.
+"""del kisi["soyisim"]
+print(kisi)"""
+#clear() anahtar sözcüğü sözlüğü boşaltır.
+#del anahtar sözcüğü sözlüğü tamamen siler.
+"""renkler = {"mavi" : "black" , "kırmızı" : "red" , "sarı" : "yellow"}
+print(renkler)
+renkler.clear() #kodun içi boşaltılmıştır
+print(renkler)
+del renkler
+#print(renkler) kod çalıştığında hata verir"""
+
+#DEMETLER
+"""Demetler veri ekleme ve çıkarmanın yapılamadığı veri yapılarıdır.
+Değiştirilemez özellikleri dışında listelere benzemektedir.
+Demetler ekleme çıkarma gibi işlemlerle uğraşmadığı için daha hızlı çalışır.
+Eklenen verinin program boyunca değiştirilmesinin istenmediği durumlarda kullanılmaktadırlar.
+
+demet1 = () #boş bir demet oluşturulmuştur.
+demet2 = ("python" , "java" , 2020 , "JS") #indis içeren bir demet oluşturulmuştur.
+meyveler = ("erik",) #tek elemanlı bir nesne oluşturmak için nesneden sonra virgül kullanılır.
+#eğer virgül koymazsak bu değişken tipi demet değil string olarak yer alacaktır.
+
+demet = (5,10,15,20,25,30,35)
+print(demet[0]) #demet içindeki ilk indistir
+print(demet[1])
+print(demet[3])
+print(demet[-1]) #demet içindeki son indistir. eksi işareti sondan başla anlamına gelir.
+print(demet[2:]) #demette iki numaralı (üçüncü) indis dahil sonraki tüm indislere ait elemanı listelemek için kullanılır.
+
+Demetler tuple() fonksiyonu ile de oluşturulabilirler ve constructor yöntemiyle başlangıçta elemanları ayarlanabilir.
+sehir = tuple(("ankara","istanbul","izmir"))
+sayi = (3,4,5)
+demet = sayi + sehir
+print(demet)
+
+Demet veri yapısında elemanlar iki parantez arasına yazılır ancak bu zorunlu değildir.
+d = ((1,2) , (3,4,5) , "ahsen")
+print(d[1][3])
+print(d[3])"""
+
+#Demetlerin temel metotları
+#index metodu
+"""bir elemanın kaçıncı indekste tutulduğunu bulmaya yarar.
+
+cicek = ("papatya" , "zambak" , "gül" , "lale" , "kardelen")
+print(cicek.index("lale"))"""
+#count metodu
+"""tuple içinde aynı elemandan kaç tane olduğunu bulmaya yarar
+dil = ("eng", "fr", "tr", "ch", "fr", "fr")
+print(dil.count("fr"))
+"""
+
+#Liste veri tipi demet veri tipine dönüştürülebilir
+"""ay = ["ocak","şubat","mart","nisan"]
+demet = tuple(ay)
+print(demet)"""
+
+"""deneme = (1,2,3,"*ak",4,"mum",5,6,7,7,8)
+for i in deneme:
+    print(i)"""
+
+#sorted() metodu
+"""demetin içindeki ögeleri sıralar
+integer değerlerde küçükten büyüğe, string değerlerde alfabetik olarak sıralanır.
+deneme1 = (4,5,678,39,1)
+deneme2 = ("sarı","mavi","ak","mor")
+print(sorted(deneme1))
+print(sorted(deneme2))"""

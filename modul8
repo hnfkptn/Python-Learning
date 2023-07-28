@@ -1,0 +1,142 @@
+import turtle #turtle modülünü içeri aktararak projeye dahil ettik.
+kalem = turtle.Turtle() #Turtle nesnesi oluşturduk.
+"""Kalem, artık turtle nesnesinin sahip olduğu bütün özelliklere sahip olacaktır.
+Turtle modülünde olan bütün nesnelere kalem nesnesi aracılığıyla erişiriz.
+Turtle modülünde 4 temel hareket bulunur:
+1. forward(mesafe) fonksiyonu ileri gitme fonksiyonudur
+2. backward(mesafe) fonksiyonu geri gitme fonksiyonudur.
+3. right(açı) fonksiyonu sağa dönme fonksiyonudur.
+4. left(açı) fonksiyonu sola dönme fonksiyonudur.
+turtle.done() fonksiyonu çizim tamamlanınca kullanılır.
+
+kalem.forward(-100)
+kalem.right(45)
+kalem.forward(-200)
+turtle.done()"""
+
+"""Turtle nesnesinde çizim için kalem rengi: pencolor(" ") veya color(" ") kullanılır.
+Girdi olarak iki tırnak arasında renk adı veya diyez ile birlikte html renk kodu kullanılır.
+Kalem kalınlığı pensize(sayı değeri) fonksiyonu ile ayarlanır.
+
+kalem.pencolor("red")
+kalem.pensize("3")
+kalem.forward(100)
+kalem.left(90)
+kalem.color("#ACE515")
+kalem.pensize(6)
+kalem.forward(100)
+kalem.left(90)
+kalem.pencolor("yellow")
+kalem.pensize(9)
+kalem.forward(100)
+kalem.left(90)
+kalem.color("#2259C1")
+kalem.pensize(1)
+kalem.forward(100)
+kalem.left(90)
+turtle.done()"""
+
+"""Kaplumbağa grafiklerde pencerenin istenen noktasına gidebilme: goto(x,y)
+Kaplumbağa grafiklerde nokta çizme: dot()
+Kaplumbağa grafiklerde çizmeden ilerleme penup() veya up() ardından forward()
+Kaplumbağa grafiklerde çizime tekrar dönmek için ilerleme pendown() veya down() ardından forward() fonk. kullanılır.
+Turtle çizim aracının görünüm şekli için de shape() fonksiyonu vardır.
+Bu fonksiyon 'arrow', ‘classic’, ‘turtle’, ‘circle’ olmak üzere 4 şekle sahip olabilir.
+
+#dot ile çizgili çizim uygulaması:
+for i in range(5):
+ kalem.dot()
+ kalem.forward(20)
+turtle.done()
+
+#dot ile çizgisiz şekil uygulaması:
+kalem.up()
+for i in range(5):
+ kalem.dot()
+ kalem.forward(20)
+turtle.done()
+
+#shape ve goto fonksiyonlarının kullanımı
+kalem.shape("turtle")
+kalem.forward(100)
+kalem.penup()
+kalem.goto(0,100)
+for i in range(5):
+ kalem.dot()
+ kalem.forward(20)
+turtle.done()
+
+kalem.shape("turtle")
+for i in range(4):
+ kalem.up()
+ kalem.forward(20)
+ kalem.dot()
+ kalem.down()
+ kalem.forward(20)
+ kalem.dot()
+turtle.done()"""
+
+#Turtle ile Geometrik Şekiller Çizme
+
+"""#turtle ile kare çizme uygulaması
+kalem.pencolor("red")
+kalem.pensize(3)
+for i in range(4):
+ kalem.forward(100)
+ kalem.left(90)
+turtle.done()
+
+#turtle ile altıgen çizme uygulaması
+kalem.pencolor("blue")
+kalem.pensize(3)
+for i in range(6):
+ kalem.forward(100)
+ kalem.left(60)
+turtle.done()
+
+#Kullanıcının istediği kenar sayısında çokgen çizdirmek
+kalem.pencolor("red")
+kalem.pensize(3)
+kenar_sayısı=int(input(" çizmek istediğiniz çokgenin kenar sayısını giriniz"))
+for i in range(kenar_sayısı):
+ kalem.forward(50)
+ kalem.left(360/kenar_sayısı)
+turtle.done()
+
+#circle fonksiyonu ile 3 farklı yarıçapta ve renkte çember çizdirme
+kalem.pencolor("orange")
+kalem.pensize(2)
+kalem.circle(20)
+kalem.pencolor("red")
+kalem.circle(30)
+kalem.pencolor("blue")
+kalem.circle(40)
+turtle.done()
+
+#İç içe döngüler ile desen çizdirme
+kalem.color("green")
+for i in range (6):
+ for j in range (6):
+ kalem.forward(50)
+ kalem.left(60) # iç döngü
+ kalem.left(60)# dış döngü
+turtle.done()"""
+
+#Desen çizen fonksiyon uygulaması
+"""
+import turtle
+def desen_çiz (kenar_uzunluğu=50,iç_kenar=3,tur_sayısı=3):
+ if(tur_sayısı <01 or iç_kenar<3):
+ print("hatalı veri girdiniz")
+ else:
+ kalem=turtle.Turtle()
+ for i in range (tur_sayısı):
+ for j in range (iç_kenar):
+ kalem.forward(kenar_uzunluğu)
+ kalem.left(360/iç_kenar)
+ kalem.left(360/tur_sayısı)
+desen_çiz()
+desen_çiz(60,4,5)
+desen_çiz(70,6,10)
+turtle.done()
+"""

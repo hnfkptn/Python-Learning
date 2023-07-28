@@ -1,0 +1,139 @@
+#MODÜLER PROGRAMLAMA
+
+#Modül(kütüphane) yazma ve çağırma
+""" *modulAdi
+def cagir():
+    print("moduler programlamaya giriş")
+oluşturulan modülü çağırmak: import modulAdi
+
+bir kütüphane dosyası yazmak ve bu dosyadaki kütüphaneleri başka bir
+projede kullanmak isteyebiliriz. bunun için şöyle yapmalıyız:
+.py uzantılı bir modül dosyası oluşturur ve içine fonksiyonumuzu yazarız.
+proje dosyamızı açıp şu şekilde kullanırız:
+import modulAdi
+modulAdi.fonkAdi()
+
+Bir modül boş bir dosyadan oluşabileceği gibi, çeşitli değişkenlerin bulunduğu bazı işlevlerin yazıldığı, bir
+veya birden fazla sınıfın bulunduğu karmaşık yapıya da sahip olabilir
+Bir modül tanımladığımızda ve içerisine değişkenler, fonksiyonlar vs.
+yerleştirdiğimizde bunlara şu şekilde erişiriz:
+modulAdi.nesneAdi
+
+program içinde nesneleri sadece ismi ile çağırmak istersek şu şekilde çağırırız:
+from modulAdi import nesne
+bu kullanımda yalnızca istediğimiz nesneyi getirebiliriz.
+başka bir nesneyi getirmek istediğimizde ise program hata verecektir.
+Tüm nesneleri kullanmak istediğimizde ise şu şekilde tanımlama yapılır:
+from modulAdi import*
+modülü takma ad ile çağırmak istediğimizde bu tanımlama şu şekile olur:
+import modulAdi as takmaAd
+...... takmaAd.nesneAdi"""
+
+#Hazir modülleri kullanmak
+"""Python'da bir hazır modülü kullanabilmek için öncelşkle o modülü içe aktarmak gerekir.
+İçer aktarmak bir modül içindeki fonksiyon ve  niteliklerin başka bir program veya ortam içinden
+kullanılabilir hale getirilmesi anlamını taşımaktadır.
+Hazır modülleri kullanmak için, modül ismi ile import edilerek çağrılmaktadır.
+Modül içindeki nesneler ise ismi ile import edilerek kullanılabilir."""
+
+#math modülü
+"""Math modülüne ait özellikleri listeleyelim:
+import math
+print(dir(math))"""
+
+#math.pi
+"""pi sayısını verir.
+parametresiz kullanılır."""
+
+#math.pow
+"""sayının üssünü verir.
+iki parametre alır:
+math.pow(sayı,üs)"""
+
+#cos(), factorial(), sqrt()
+"""cos() kosinüsü verir: math.cos(açı)
+factorial() faktöriyel alır: math.factorial(sayı)
+sqrt() karekök alır: math.sqrt(sayı)
+"""
+
+#random modülü
+"""Python'da rastgele sayı üretilmesini sağlar.
+Random modülüne ait özellikleri listeleyelim:
+import random
+print(dir(random))
+
+a = random.random() #[0,1) aralığında rastgele sayı üretir.
+b = random.randint(başlangıç,bitiş) #[başlangıç,bitiş] aralığında rastgele sayı üretir.
+cicek = ["gül","zambak","orkide","papatya"]
+c = random.choice(cicek) #liste içinde rastgele öge seçilir."""
+
+#time modülü
+"""zaman değerlerini düzenlemekle ilgili görevleri yerine getirir.
+zamanı göstermek için iki standart vardır.
+1.epoch'tan itibaren saniye olarak verir.
+epoch, unix zaman başlangıcı olarak alınır ve tarih olarak 1 ocak 1970'e denk gelir:
+import time
+print(time.time())
+print(time.gmtime(time.time())) #okunabilir tarih formatına çevrilir.
+2.localtime, zaman bilgilerini sıralı tüp şeklinde verir:
+import time
+print(time.localtime())"""
+
+#ctime() fonksiyonu
+"""içinde bulunulan zaman bilgisini verir:
+import time
+print(time.ctime())"""
+
+#strftime() fonksiyonu
+"""kendimize ait zaman cümleleri oluşturarak zamanı belirtebiliriz.
+bu fonksiyona ait yönergeler şunlardır:
+%a : kısaltılmış gün adı
+%A : gün adı
+%b : kısaltılmış ay adı
+%B : ay adı
+%c : tam tarih ve saat
+%d : ayın günü (01-31)
+%H : saat (00-24) #24'lü saat biçimi
+%I : saat (01-12) #12'li saat biçimi
+%j : yılın günü (01-366)
+%m : ay (00-12)
+%M : dakika (00-59)
+%p : öğleden önce (öö/am), öğleden sonra (ös/pm)
+%S : saniye (00-59)
+%U : yılın haftası (00-53)
+%w : haftanın günü (0-6)
+%y : yılın son iki hanesi (00-99)
+%Y : yıl
+
+import time
+print(time.strftime("%d/%m/%Y"))"""
+
+#sleep() fonksiyonu
+"""programın belirlenen süre boyunca durdurulmasına olanak sağlar.
+aldığı argüman saniye cinsindendir.
+
+import time
+print ("Başlangıç : %s" % time.ctime())
+time.sleep(10)
+print ("Bitiş : %s" % time.ctime())"""
+
+#Pip paket yükleyicisi
+"""Python kütüphane ve modüllerini kurmamızı sağlayan yardımcı programdır.
+Python'da standart paketleirn dışında bir de üçüncü parti modülleri vardır.
+bunlar python geliştiricileri haricindeki kişilerce yazılıp kullanıma sunulmuş araçlardır.
+bu paketler standart paketlerin aksine dilin bir parçası değildirler.
+bu yüzden bu paketleri kullanabilmek içiin pip yardımıyla kurmak gerekir.
+
+pip install paketAdi #paketi kurmak için
+pip unistall paketAdi #paketi kaldırmak için
+pip install paketAdi==1.0.4 #istenilen versiyonu kurar
+pip install 'paketAdi>=1.0.4' #alt limi ile verilen versiyonu kurar
+
+install: yeni paket yükler
+uninstall: varolan paketi siler
+freeze: yüklü tüm paketleri requirements formatında listesini çıktıya verir
+List : yüklü tüm paketleri normal listesini çıktıya verir
+Show : yüklü paketler hakkında bilgi verir
+Search : paketler içinde arama yapar
+Wheel : paketler içinde requirements için bir arşiv yapar
+Upgrade : Kurulu bir paketi güncellemek için kullanılır"""

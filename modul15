@@ -1,0 +1,97 @@
+#İLERİ SEVİYE FONKSİYONLAR
+
+#List Comprehension
+"""bir çırpıda liste oluşturmak demektir.
+i for i in liste şeklinde kullanılır.
+liste = [1,"al",45.4]
+liste = []
+liste = list()
+yazi = "kafan mı karıştı ?" #bu liste sayısal karakterler de içerebilir.
+liste = [i for i in yazi] #list comprehension kullanım
+print(liste)"""
+
+#Recursive Fonksiyonlar (özyinelemeli)
+"""kendilerini tekrar çağıran fonksiyonlardır. bilgisayar bilimlerindeki böl ve yönet
+(divide and conquere) metonunun uygulamalarından biridir. faktöriyel hesaplama buna örnektir.
+def factHesap(sayi):
+    faktoriyel = 1
+    if sayi == 1:
+        return 1
+    else:
+        return sayi * factHesap(sayi-1)
+sayı = int(input("sayı girin:"))
+print(factHesap(sayı))"""
+
+#Lambda Fonksiyonları
+"""küçük anonim fonksiyonları olarak isimlendirilirler.
+işlevsel tek satırlık kodlar olarak düşünebiliriz.
+normal fonksiyonların aksine, lambda fonksiyonların kullanımında,
+tanımlamada kullanılan def anahtar sözcüğü ve return anahtar kelime
+kullanılma ihtiyacı ortadan kalkar. bu sayede lambda kullanarak programlamada
+işimizi görecek pratik fonksiyonlar kullanılabilir.
+argümanlar giriş, ifadeler çıkış değerleridir. kullanımı şöyledir:
+Lambda arguman : ifadeler
+
+x = lambda a : a + 15
+print(x(5))
+
+import math
+hipotenüs = lambda x,y:math.sqrt(x*x+y*y)
+print(hipotenüs(3,4))
+
+print(lambda x,y:3*x+5*y)(2,5)"""
+
+#Map Fonksiyonu
+"""bir işlemin veya fonksiyonun birden çok veriye tek satırda uygulanmasını sağlayan
+pratik fonksiyonlardan biridir. map, for döngüsü ile yapılabilecek işlemleri
+tek satırda çözümlemesine olanak sağlar.
+map(fonksiyon,iterasyon yapılabilecek veri tipi(liste,demet vb))
+def davetiyeMetni(isim):
+    metin = "sayın " +isim+ "\n" +"bu mutlu günümüzde sizleri de aramızda görmekten mutluluk duyarız.\n"
+    return metin
+isimler = ["ali", "ayşe", "metin", "elif"]
+#for döngüsü ile yapımı
+# for kisi in isimler:
+    #print(davetiyeMetni(kisi))
+#map fonksiyonu ile yapımı
+davetiye=map(davetiyeMetni,isimler)
+print(davetiye) #davetiye değişkeninin bellekteki konumunu yazdırır.
+print(*davetiye) #davetiye değişkeninin değerini yazdırır.
+
+isimler=["Ali","Ayşe","Murat","Elif"]
+yeni_liste =map(lambda x:"Sayın "+x+"\n Bu mutlu günümüzde sizleri de aramızda görmekten mutluluk duyarız.\n", isimler)
+print(*yeni_liste)"""
+
+#Reduce Fonksiyonu
+"""reduce fonksiyonu değer olarak aldığı fonksiyonu soldan başlayarak listenin
+ilk 2 elemanına uygular. daha sonra çıkan sonucu listenin 3. elemanına uygular.
+bu şekilde liste bitinnceye kadar devam eder ve sonunda bir değer dondürür.
+from functools import reduce
+print(reduce(lambda x,y : x + y , [1,2,3,4]))
+
+import functools
+sayı = int(input("sayı giriniz:"))
+liste = [i for i in range(1,sayı+1)]
+print(functools.reduce(lambda x,y : x*y , liste))"""
+
+#Filter Fonksiyonu
+"""bu fonksiyon liste veri tipindeki yapılar için kullanılır.
+filter(fonksiyon1,liste1)
+liste1, liste veri tipindeki değerleri; fonksiyon1 daha önce tanımlanmış
+fonksiyonu ifade eder.
+içinde kullanılan fonksiyon1'in döndürdüğü değerin True olduğu değerlerde
+duruma göre liste veri tipinde çıktı üretmeye yarar. farklı bir değişle verilen
+liste üzerinde fonksiyon işlemlerinin çıktısı kullanılarak filtreleme işlemi yapılır.
+def buyuk_harf(isim):
+    return isim.isupper()
+liste=["Ali","ali","Selim","SELİM","selim"]
+sonuc=filter(buyuk_harf,liste)
+print(*sonuc)
+
+sayılar = [10, 15, 4, 29, 402, 249, 210, 55, 40, ]
+sonuc = filter(lambda x: (x % 3 == 0), sayılar)
+print(*sonuc)
+
+musteriler= [[1, 12], [2, 600], [ 3, 500], [4,150]]
+sonuc = filter(lambda x: (x[1] > 149),musteriler )
+print(*sonuc)"""

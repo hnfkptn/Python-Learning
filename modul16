@@ -1,0 +1,172 @@
+#SINIFLAR VE NESNELER
+"""python'da kullanılan veri türlerinin her biri bir sınıftır
+print(type(int))
+print(type(str))
+print(type(list))
+print(type(tuple))
+print(type(dict))
+"""
+
+"""bir sınıf,
+class sinifAdi(): veya class sinifAdi: şeklinde tanımlanır.
+özellikler ve metotlar sınıfın içinde yer alır.
+bir sınıf içindeki bütün fonksiyonlar zorunlu olarak self alırlar.
+bu sayede fonksiyonlar sınıf içindeki tüm fonksiyonlara ve değişkenlere erişim sağlar.
+class sinif:
+    a = 0
+    def b(self):
+        print("bu örnek bir sınıftır")
+"""
+
+"""sınıflardan nesne oluşturma/türetme(intance)
+nesne = sinif() şeklindendir.
+"""
+
+"""yapıcı(constructor) fonksiyon:
+bir nesne oluşturulduğunda otomatik olarak çalışan fonksiyondur.
+OOP'de nesne için zorunlu parametreleri işler ve nesnenin oluşturulmasını sağlar.
+yapıcı fonksiyon "self" olmadan kullanılmaz. aksi takdirde typeError hatası alır.
+class sinif:
+    def __init__(self,ifade,tekrar,kacis):
+        print((ifade+kacis)*tekrar)
+nesne = sinif("sınıf oluşturuldu",4,"\n")
+"""
+
+"""aşırı yükleme(over loading):
+oop'de aynı isimle farklı parametrelerden oluşan bir fonksiyon tanımlanabiilir.
+ancak python'da bir sınıf içinde aynı isimle birden fazla fonk. tanımlamak
+yani aşırı yükleme yapmak hataya sebep olur.
+bu durumun üstesinden gelmek için bazı parametreler için varsayılan değer atanabilir.
+bu sayede o fonku kullandığımızda, o parametreye değer atamazsak hata ile karşılaşmayız.
+Sınıfınızdan bir nesne oluşturarak parametrelerine tekrar erişebilirsiniz. Zorunlu parametrelere değer
+vererek nesne tanımlayabilirsiniz. Sonrasında fonksiyon içindeki değişkenlere erişim sağlayabilirsiniz.
+class metin:
+    def __init__(self,ifade,tekrar,kacis="\n"):
+        self.ifade=ifade 
+        self.tekrar=tekrar
+        print((ifade+kacis)*tekrar)
+nesne = metin("sınıf oluşturuldu",5)
+metinNesnesi=MetinSinifi('Müdür', 3)
+print ('Yazılan Metin: ', metinNesnesi.ifade)
+print('Tekrar Sayısı: ', metinNesnesi.tekrarSayisi)
+"""
+
+"""class MasaLambasi:
+    isikRengi='sarı' # özellik
+    isikDurum=False # özellik
+    def isikAc(self): # metot, fonksiyon
+        self.isikDurum=True
+        return 'Aydınlık'
+MasaLambasi.isikRengi
+lambam=MasaLambasi()
+print (lambam.isikAc())
+print (lambam.isikDurum)
+del(lambam) #oluşturduğumuz nesneyi del() fonk. ile sileriz. artık bu nesneye erişim yoktur."""
+
+"""class ogrenci():
+    __doc__ = "öğrenci sınıfı" #sınıfı açıklamak için kullandık
+    ogrenciler = []
+    def __init__(self, ogrenciAdSoyad):
+        self.ogreciAdSoyad = ogrenciAdSoyad
+        self.dersler = []
+        self.sinavlar = []
+        self.ogrenciEkle (self.ogrenciAdSoyad)
+    def ogrenciEkle(self,adSoyad):
+        self.ogrenciler.append(adSoyad)
+        print("() adlı kişi öğrencilere eklendi".format(adSoyad))
+    def ogrenciListesiYazdir(self):
+        print("öğrenci listesi")
+        for ogrenci in self.ogrenciler:
+            print(ogrenci)
+    def dersEkle(self,dersAd):
+        self.dersler.append(dersAd)
+    def ogrencininDersleri(self):
+        print("() adlı kişinin dersleri:".format(self.ogrenciAdSoyad))
+        for ders in self.dersler:
+            print(ders)
+    def sinavPuaniEkle(self,sinavPuan):
+        self.sinavlar.append(sinavPuan)
+    def ogrencininSinavPuanları(self):
+        print("()Adlı kişinin sınav sonuçları:".format(self.ogreciAdSoyad))
+        for sinav in self.sinavlar:
+            print(sinav)
+ogrenciNesnesi=ogrenci('Murat Çalışkan') #sınıftan nesne türeterek öğrenci eklenir
+print ('Öğrenci Sayısı:', len(ogrenciNesnesi.ogrenciler)) #öğrenci sayısını verir
+ogrenciNesnesi.dersEkle('Türkçe') #tek nesne ile bütün özelliklere erişebilir ve gerekli işlemleri yaparız
+ogrenciNesnesi.sinavPuaniEkle(95)
+ogrenciNesnesi.dersEkle('Matematik')
+ogrenciNesnesi.sinavPuaniEkle(100)
+ogrenciNesnesi.dersEkle('Fen Bilgisi')
+ogrenciNesnesi.sinavPuaniEkle(100)"""
+
+"""sınıf tanımlamnırken sınıftan bir nesne türetmeden fonksiyonlarına erişmek için
+"@classmethod" kullanılır.
+bir sınıf metodu şöyle oluşturulur:
+@classmethod
+def ogrenciAdindanSorgula(cls, adi): #self yerine cls kullanılır.
+    cls(adi, 0)
+Ogrenciler.ogrenciAdindanSorgula('Murat Çalışkan') #nesne kullanmadık
+"""
+
+#KAPSÜLLEME
+"""sınıf içindeki metotlara ve özelliklere erişimi kısıtlamak için
+kapsülleme yöntemi kullanılır. bir sınıf tanımlanrıken kapsülleme ile
+erişilmesi, değiştirilmesi istenmeyen veya sadece kısıtlı erişim verilmek
+istenilen özellikler ve/veya memtotlar tanımlanılabilir. bunun için
+istenilen metodun veya özelliğin başına "__" eklenmelidir.
+set ve get metotlarıyla bu özelliklere erişmek mümkündür.
+get özellikleri okumak, set ise değiştirmek için kullanılır.
+
+class ogrenciler:
+    def __init__(self,adi,yasi,TCNo):
+        self.adi = adi
+        self.yasi = yasi
+        self.__TCNo=TCNo
+   
+    def ogrenciYaz(self):
+        print(self.adi)
+        print(self.yasi)
+        print(self.__TCNo)
+    
+    def get__TCNo(self):
+        return str(self.__TCNo)[7:]
+    
+    def set_TCNo(self,TcNoDuzelt):
+        self.__TCNo=TcNoDuzelt
+    
+ogrenci = ogrenciler("Murtaza Çalışkan",18,123456789)
+ogrenci.ogrenciYaz()
+print(ogrenci.adi)
+print(ogrenci.yasi)
+ogrenci.set_TCNo(12309768687)
+print(ogrenci.get__TCNo())
+#print(ogrenci.__TCNo) --> hata verdi
+"""
+
+#KALITIM
+"""Kalıtım, bir sınıfın, başka bir sınıfın metot ve özelliklerini kendi
+bünyesine almasıdır. bu metot ve özelliklerin miras alındığı sınıfa üst
+sınıf, miras alan sınıfa alt sınıf denir.
+alt sınıflar, üst sınıfın tüm metot ve özelliklerini devralır ancak
+farklı özellikler ve metotlar da ekleyebilir. en temel sınıf türü,
+genellikle diğer tüm sınıfların ebeveynleri olarak miras aldığı bir nesnedir.
+üst sınıflara ebeveyn (parent) sınıf, alt sınıflara ise çocuk (child) sınıf
+denir.
+
+class Kedi:
+    tur="memeli"
+    def __init__(self,adi, yasi):
+        self.adi = adi
+        self.yasi = yasi
+    def ozellik(self):
+        return "{} {} yaşında" .format(self.adi,self.yasi)
+    def miyavla(self,ses):
+        return "{}{} diye miyavlar" .format(self.adi,ses)
+
+class VanKedisi(Kedi):
+    def gözler(self,gözRengi):
+        return "{} tüyleri {}" .format(self.adi,gözRengi)
+pisi = VanKedisi("Pamuk",18)
+print(pisi.ozellik())
+print(pisi.gözler("Mavi ve Kahverengi"))"""
+

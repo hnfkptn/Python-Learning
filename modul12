@@ -1,0 +1,97 @@
+#DOSYALARLA ÇALIŞMAK
+"""dosyalar verilerin kalıcı olarak depolandığı ve ihtiyaç duyulduğunda
+okunabildiği temel yapılardandır. dosyaların çalışma mantığı ve süreci
+şu şekildedir:
+1.Dosyayı aç (1.dosya adı - 2.açma modu)
+2.İşlem yap (oku, arat, yaz)
+3.Dosyayı kapat
+
+Python'da dosya işlemler python'un içinde bulunan hazır nesnelerle yürütülür.
+Bunun için metin sarma (text wrapper) nesnesi oluşturulur.
+dosya  = open (dosya adı , dosya açma türü)
+
+Python'da bir dosyayı açmak için open() fonksiyonu kullanılır.
+open() fonksiyonu içine dosya adı ve erişim türü girdilerini alır.
+şu mantıkla düşünülebilir:
+(hangi dosyayı açayım, hangi amaç için açayım)
+bir dosya veri okuma, veri yazma ve ikisini de yapmak amacıyla açılabilir.
+dosya ile işimiz bittiği zaman dosyayı close() fonksiyonu ile kapatırız.
+karakter kodlaması içinde 3. parametre olarak endcoding kullanılır.
+türkçe sorun yaşamamak için encoding = "utf-8" ifadesi eklenir.
+dosya işlemlemleri yaparken dosyayı kendimizin açııp kendimizin kapattığı
+yahut with open parametresi kullanarak dosyanın sürecin bitiminde otomatik
+kapandığı yöntem kullanılabilir.
+1. dosya = open(dosya adı,açma kipi)
+işlemler
+dosya.close()
+2.with open(dosya adı,açma kipi) as dosya
+    işlemler #girinti kullanılır.
+
+Dosya işlemlerinde kullanılacak dosyaları python kodlarının olduğu ve .py
+uzantılı olan kod dosyası ile aynı klasörde oluşturmak ileride dosyanın sadece
+adını yazarak, bilgisayarda bulunduğu yeri yazmaya ihtiyaç duymadan açmamızı
+sağlar."""
+
+#DOSYA KİPLERİ
+"""dosyaları okuma, yazma yahut hem okuyup hem yazma amacını karşılamak için
+4 farklı dosya açma kipi vardır:
+1. sadece veri okumak için r (read) kipinde aç.  bu kipte, dosya yoksa hata üretilir.
+varsa okunur.
+dosya=open("ornek.txt","r")
+işlemler
+dosya.close()
+2. sadece veri kaydetmek/yazmak için w (write) kipinde aç. bu kipte, dosya yoksa oluşturulur.
+varsa dosya oluşturulur ve eski dosya silinir. eski dosyada veri varsa gider.
+dosya = open("ornek.txt","w")
+işlemler
+dosya.close()
+3. hem veri okumak hem de veri yazmak için r+ kipinde aç. bu kipte, dosya oluşturulmamış ise hata verir.
+var ise dosya oluşturulmaz, dosyanın istenen bölümlerine eklemeler yapılır. eski bilgiler silinmez
+dosya=open("ornek.txt","r+")
+işlemler
+dosya.close()
+4. hem veri okumak hem de dosyanın sonuna veri yazmak için a (append) kipinde aç.
+a kipinde dosya açtığımızda dosya yoksa oluşturulur, hata vermez.
+var ise dosya oluşturulmaz. dosyanın sonuna ekleme yapılır. eski bilgiler silinmez.
+Sadece okuma işlemi yapamazsınız.
+dosya = open("ornek.txt","a")
+işlemler
+dosya.close()"""
+
+#DOSYA OKUMA YAZMA İŞLEMLERİ
+"""DOSYAYI OKUMA KİPİNDE AÇMA:
+dosya = open("deneme.txt","r")
+belge = dosya.read()
+print(belge)
+dosya.close()"""
+
+"""DOSYAYI YAZMA KİPİNDE AÇMA:
+with open("deneme.txt","w") as dosya: #dosya otamatik kapatılacak
+    dosya.write("dosya silinip yeniden yazıldı")"""
+
+"""DOSYAYI OKUMA VE YAZMA KİPİNDE AÇMA
+dosya = open("deneme","r+")
+belge = dosya.read()
+print(belge)
+dosya.write("\n bu metin en sona eklendi")
+dosya.close()"""
+
+"""DOSYAYI GEMİŞLETME KİPİNDE AÇMA:
+dosya = open("deneme.txt","a")
+dosya.write("bu mentin dosyasının sonuna yazıldı")
+dosya.close()"""
+
+"""Python'da dosyalara yazılan veriler string türünde kaydedilmektedir."""
+
+#DOSYALARIN ÖZEL METOTLARI
+"""read() fonksiyonu dosyanın tamamını okumak için kullanılır.
+parametre ile kullanılması durumunda aynı fonksiyon dosyanın bir kısmını okuması için de kullanılabilir.
+read(10) ile 10 byte veri okunur.
+Dosyadan veri okunurken for döngüsü kullanılır.
+seek() fonksiyonu imlecin dosyada istenen noktaya alınması için kullanılır.
+tell() fonksiyonu imlecin güncel olarak nerede bulunduğunu öğrenmek için kullanılır.
+writelines() fonksiyonu string içerikli listeleri dosyaya yazar.
+readline() fonksiyonu bir satır veri okur.
+readlines() fonksiyonu dosyanın tamamını okuyup liste veri tipinde tutar."""
+
+#BU KONU İÇİN ÖRNEKLERE BAK
