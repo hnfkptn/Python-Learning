@@ -1,0 +1,6 @@
+#doğduğumuz zamandan beri ne kadar süre yaşadığımızı hesaplayan bir program.
+
+from datetime import *
+birth = datetime.strptime(input("Enter your birth date (d.m.y): "), "%d.%m.%Y")
+age = datetime.now() - birth
+print("You survived: {}" .format(age))

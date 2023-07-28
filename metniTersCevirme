@@ -1,0 +1,5 @@
+#kullanıcının girdiği metni tersine çevirerek gönderen bir uygulama
+text = input("Write your message you want to send:")
+print(reversed(text)) #<reversed object at 0x0000022681949810> hataını verdi
+print(*reversed(text)) #metot çalıştı ve mesajı olduğu gibi ters çevirdi
+print(list(reversed(text))) #metot çalıştı ve mesajı liste halinde geri çevirdi

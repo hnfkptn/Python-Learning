@@ -1,0 +1,19 @@
+#Bubble sort algoritması kullanarak bir diziyi küçükten büyüğe sıralamak
+"""Bubble sort algoritmasına göre bir dizide sırayla elemanlar soldan sağa
+doğru ikişer ikişer karşılatırılır ve büyük olan sağa küçük olan sola olacak
+şekilde yer değiştirirler.
+
+"""
+def bubbleSort(numberArray):
+    for i in range(len(numberArray)): #dizi içindeki bütün elemanların doğru yerde olduklarını kontrol etmek için
+        for j in range(len(numberArray)-1): #dizi içindeki elemanlarda gezinip sıralama yapmak için
+            if numberArray[j]>numberArray[j+1]:
+                x = numberArray[j+1]
+                numberArray[j+1] = numberArray[j]
+                numberArray[j] = x
+            else:
+                continue
+    return numberArray
+
+liste = list(input("Enter the list"))
+print(bubbleSort(liste))

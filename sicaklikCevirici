@@ -1,0 +1,50 @@
+#Sıcaklık skalalarında dönüşüm yapan program
+"""FORMÜLLER:
+fahrenheit to celcius       C=(F-32)*5/9
+celcius to fahrenheit       F=(9/5)*C+32
+fahrenheit to kelvin        K=(5/9)*(F-32)+273
+kelvin to fahrenheit        F=(K-273)*(5/9)+32
+celcius to kelvin           K=C+273
+kelvin to celcius           C=K-273
+"""
+
+def celToFah(self,firstDegree):
+    lastDegree = 1.8*firstDegree+32
+    return lastDegree
+def fahToCel(self,firstDegree):
+    lastDegree = 1.8*(firstDegree-32)
+    return lastDegree
+def celToKel (self,firstDegree):
+    lastDegree = firstDegree+273
+    return lastDegree
+def kelToCel (self,firstDegree):
+    lastDegree = firstDegree-273
+    return lastDegree
+def fahToKel (self,firstDegree):
+    lastDegree = 1.8*(firstDegree-32)+273
+    return lastDegree
+def kelToFah (self,firstDegree):
+    lastDegree = 1.8*(firstDegree-273)+32
+    return lastDegree
+
+firstDegree = float(input("Enter temperature degree:"))
+scaleOfFirstDegree = input("What is the temperature scale of the degree you entered?\n")
+scaleOfLastDegree = input("what is the temperature scale you want to convert?\n")
+lastDegree = 0
+if scaleOfFirstDegree in ["Celcius","celcius","C","c"]:
+    if scaleOfLastDegree in ["Fahrenheit","fahrenheit","F","f"]:
+        lastDegree = celToFah(firstDegree)
+    elif scaleOfLastDegree in ["Kelvin","kelvin","K","k"]:
+        lastDegree = celToKel (firstDegree)
+if scaleOfFirstDegree in ["Kelvin","kelvin","K","k"]:
+    if scaleOfLastDegree in ["Celcius","celcius","C","c"]:
+        lastDegree = kelToCel (firstDegree)
+    elif scaleOfLastDegree in ["Fahrenheit","fahrenheit","F","f"]:
+        lastDegree = kelToFah (firstDegree)
+if scaleOfFirstDegree in ["Fahrenheit","fahrenheit","F","f"]:
+    if scaleOfLastDegree in ["Celcius","celcius","C","c"]:
+        lastDegree = fahToCel(firstDegree)
+    elif scaleOfLastDegree in ["Kelvin","kelvin","K","k"]:
+        lastDegree = fahToKel (firstDegree)
+print("Dönüşüm gerçekleştirildi>>>")
+print(firstDegree, "degrees", scaleOfFirstDegree, "converted to", lastDegree, "degrees", scaleOfLastDegree)

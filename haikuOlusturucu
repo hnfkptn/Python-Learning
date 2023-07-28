@@ -1,0 +1,11 @@
+#Geleneksel olarak doğal dünyanın görüntülerini çağrıştıran üç dizelik Japon şiirlerine haiku denir.
+#format() metodunun kullanımını pratikleştirmek için kullanılabilir.
+
+import random
+people = ["alex","saddie","thomas","eve"]
+place = ["home","school","cinema","hospital","dance course"]
+OnTime = ["early","late"]
+time = ["today","tomorrow","next week","next day"]
+words = [random.choice(people),random.choice(place),random.choice(OnTime),random.choice(time),random.choice(people)]
+note = "{} will be {} {} {}, don't wait for {}" #alex will be home late today, dont wait for him
+print(note.format(*words))

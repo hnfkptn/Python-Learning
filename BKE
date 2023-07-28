@@ -1,0 +1,109 @@
+#Beden kitle endeksini hesaplayan uygulama
+"""bir sınıf tanımlayacağız. bu sınıf bke'ni hesaplayacak.
+içinde boy ve kilo değişkenlerini tanımlayacak ve bu boy ve kilo
+değerlerini kullanarak diğer hesap işlemlerini yapacağız.
+bke'ni hesapladığımızda bu değer aralığının hangi aralıkta olduğunu
+söyleyen başka bir metot tanımlayacağız.
+yapıcı metotta, boy ve kilo değerlerine varsayılan değer atayacağız.
+bke değerini geri döndürecek bir de özellik tanımlayacağız.
+
+
+"""
+"""
+def hesaplama(boy,kilo):
+    bke = kilo/(boy*boy)
+    return bke
+def sonucYazdirma(bke):
+    if bke < 18.5:
+        print("Zayıf")
+    elif bke < 24.9:
+        print("İdeal")
+    elif bke < 29.9:
+        print("şişman")
+    elif bke < 34.9:
+        print("obez")
+    else:
+        print("aşırı obez")
+    return
+    
+boy = float(input("enter the lenght:"))
+kilo = float(input("Enter the weigh:"))
+bke = hesaplama(boy,kilo)
+print(bke)
+sonucYazdirma(bke)
+"""
+"""yarattığımız bir sınıftan tanımlanan metotlardaki self parametresi
+bu sınıftan türetilecek nesneleri temsil eder.
+sınıf tanımlama aşamasında sınıftan türetilecek bütün
+nesneleri bilmediğimiz için bu nesneler self ile tamsil edilir ayrıca
+yapıcı metoda gönderilen diğer özellik parametreleri, sınıftan türetilen
+nesneler içerisinde yani self içerisinde kopyalanır.
+her bir nesne yaratıldığında yapıcı constructor metodu çalışır.
+
+özellik tanımlama sınıf seviyesinde veya nesne seviyesinde yapılabilir.
+sınıf seviyesinde yapılan özellik tanımlamaları doğrudan sınıf içine
+nesne seviyesinde yapılanlar ise yapıcı metot içine tanımlanır.
+constructor metot, bir sınıf içindeki varsayılan değerleri
+atamak için kullanılır ve gereğinden fazla parametre alması
+önerilmez.
+constructur içerisinde tanımlanan özellikler nesne seviyesindedir
+ve değer atamaları da nesne üzerinden yapılır. kimi zaman sınıf
+seviyesinde de özellik tabımlaması yapılmak istenebilir.bu sayede
+o sınıftan türetilen her bir değer nesne için ortak özellik ataması
+yapılabilir ve bu değer nesne bazında değiştirilebilirler.
+örneğin kuş sınıfı oluşturduğumuzu ve uçma kabiliyeti adlı sınıf
+seviyesindeki özelliğe uçabilir değeri atadığımızı düşünebiliriz.
+kuş sınıfından türetilen her bir nesne için uçabilir değerine
+sahip olacaktır ancak örneğin tavuk adlı bir nesne tanımladığımızda
+sınıf seviyesindeki bu özelliği değiştirebiliriz.
+
+class Kuş:
+     # class attributes
+     uçmaKabiliyeti = 'uçabilir'
+
+     # constructor (yapıcı metod)
+     def __init__(self, tür, tüyRengi):
+
+         # object attributes
+         self.tür = tür
+         self.tüyRengi = tüyRengi
+
+bülbül = Kuş(tür = "sarı bülbül" , tüyRengi = "mavi")
+tavuk = Kuş(tür = "habeş tavuğu" , tüyRengi = "gri" )
+tavuk.uçmaKabiliyeti = "uçamaz"
+
+Tanımladığımız bir sınıf içinde diğer metotlara erişmek için
+sınıf içinde nesne tanımlamak sağlıklı bir kod yazma yöntemi değildir.
+bunun yerine yapıcı metot içinde sonradan çağırıp kullanacağımız metodu
+"self" anahtar kelimesiyle tanımlamak yeterlidir.
+"""
+
+class BKE:
+
+    def __init__(self,boy,kilo):
+        self.boy = boy 
+        self.kilo = kilo
+        self.BKEHesaplama()
+
+    def BKEHesaplama(self):
+        bke = self.kilo / (self.boy*self.boy)
+        return bke
+
+    def sonuc(self):
+        bke = self.BKEHesaplama()
+        print("Beden kitle endeksiniz hesaplandı:", bke)
+        if bke < 18.5:
+            return "zayıf"
+        elif bke < 24.9:
+            return "ideal"
+        elif bke < 29.9:
+            return "şişman"
+        elif bke < 34.9:
+            return "obez"
+        else:
+            return "aşırı obez"
+
+boy = float(input("Boyunuzu metre cinsinden giriniz:"))
+kilo = float(input("Kilonuzu kilogram cinsinden giriniz:"))
+kullanici = BKE(boy,kilo)
+print(kullanici.sonuc())

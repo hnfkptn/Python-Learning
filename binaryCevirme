@@ -1,0 +1,9 @@
+#Kullanıcının girdiği onluk sayı sistemindeki sayıyı binary sisteme çeviren uygulama
+def binary(number):
+    result = ""
+    while number/2 >= 1:
+         result = str(number%2)+str(result)
+         number //= 2
+    return result
+number = int(input("Enter a number: "))
+print(binary(number))

@@ -1,0 +1,29 @@
+#ord() fonksiyonu, giriş dizesinin ilk karakterinin unicode kod numarasını gönderir.
+#chr() fonksiyonu, parametre olarak aldığı sayısal değerin karakter karşılığını geri verir.
+#chr() fonksiyonu ascii karakter kümesi üzerinde işlem yapmaz, unicode üzerinden işlem yapılabilir.
+import random
+increase = random.randint(0,100)
+password = None
+def createPassword(password):
+    if password == None:
+        password = input("Create your password:")
+        return password
+    else:
+        return password
+def encrypt(password,increase,output=""):
+    for character in password:
+        output = "{}{}" .format(output,chr(ord(character)+increase))
+    return output
+def decrypt(text,increase,output=""):
+    for character in text:
+        output = "{}{}" .format(output,chr(ord(character)-increase))
+    return output
+print("Enter which process you want to continue:")
+print("If you want to encrypt enter the 'E'")
+print("If you want to decrypt enter the 'D'")
+process = input("Awaiting your reply:")
+if process == "E":
+    print("encryption successful:" ,encrypt(createPassword(password),increase))
+elif process == "D":
+    text = input("Enter the text:")
+    print("decryption successful:" ,decrypt(text,increase))

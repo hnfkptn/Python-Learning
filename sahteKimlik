@@ -1,0 +1,27 @@
+#verilen isim ve soyisim listelerinden rastgele seçimler yaparak sahte kimlikler oluşturan program
+
+import random
+def generateName(self,gender):
+    firstName = ""
+    lastNames = ["darwin","faraday","celcius","angelou","curie","copernicus"]
+    lastName = random.choice(lastNames)
+    if gender in ["man","boy","girl","woman"]:
+        if gender in ["girl","woman"]:
+            firstNamesOfGirls = ["alexa","charlie","stealla","mimi","alice","virginia"]
+            firstName = random.choice(firstNamesOfGirls)
+        elif gender in ["boy","man"]:
+            firstNamesOfBoys = ["tom","michael","arthur","anders","ısaac","fredy"]
+            firstName = random.choice(firstNamesOfBoys)
+        identity = firstName + lastName
+        return identity
+
+    else:
+        gender = input("the gender you entered is undefined, try again:")
+        return generateName(gender)
+nameList = []
+for i in range(1):
+    gender = input("enter your gender:")
+    identity = generateName(gender)
+    print(identity)
+    nameList.append(identity)
+print(nameList)

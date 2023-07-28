@@ -1,0 +1,23 @@
+#girilen bir metindeki kelime sayısını hesaplayan uygulama
+#split() metodu listeyi veya karakter dizilerini istenilen şekilde böler.
+#aldığı ilk parametre ayıraç yani dizinin nereden bölüneceğini seçer.
+#default ayıraç boşluktur.
+import string
+
+
+def isWord(word):
+    for char in word:
+        if char in string.ascii_letters:
+            return True
+        elif char in string.digits:
+            return True
+    return False
+def wordCount(text):
+    wordList = text.split()
+    totalWordCount = 0
+    for word in wordList:
+        if isWord(word):
+            totalWordCount += 1
+    return totalWordCount
+text = input("Enter the message:")
+print("Total words: {}" .format(wordCount(text)))

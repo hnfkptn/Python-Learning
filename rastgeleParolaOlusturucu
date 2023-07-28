@@ -1,0 +1,35 @@
+#bu uygulama kullanıcıya rastgele şifre oluşturmak için kullanılabilecek bir uygulamadır.
+#join metodu, bir sıralı nesnenin dize tipi elemanlarını birleştirir.
+"""
+örnek:
+"".join(["A","67","B","0.15"])    # yanyana yapıştır
+'A67B0.15'
+örnek:
+" ".join(["A","67","B","0.15"])   # araya bir boşluk koyarak yapıştır
+'A 67 B 0.15'
+örnek:
+"-*-".join(["A","67","B","0.15"]) # araya -*- koyarak yapıştır
+'A-*-67-*-B-*-0.15'
+"""
+#string.digits dizisi '0123456789' rakamları string olarak ifade eden dizidir.
+#string.punctiation noktalama işaretlerini ifade eden dizidir.
+#string.asscii_uppercase ve string.ascii_lowercase string değerleri büyük ve küçük harf şeklinde ifade eden dizidir.
+
+import random
+import string
+def generatePassword(level):
+    if level == "basic":
+        password = ''.join([random.choice(string.digits) for n in range(6)])
+        return password
+    elif level == "strong":
+        password = ''.join([random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for n in range(16)])
+        return password
+def levelSelectionOfPassword():
+    level = input("Select the level of password you want (enter 'B' for basic password and 'S' for strong password)")
+    if level == "B" or "b":
+        level = "basic"
+    if level == "S" or "s":
+        level = "strong"
+    return level
+
+print(generatePassword(levelSelectionOfPassword()))

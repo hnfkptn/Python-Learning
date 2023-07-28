@@ -1,0 +1,58 @@
+#Taş kağıt makas oyunu
+"""sırayla kullanıcı ardından bilgisayar taş kağıt makastan birini seçer
+karşılaştırmalar yapılır. sonuç karar verilir. skor düzenlenir.
+karşılaştırmalar metot içinde verilir.
+
+"""
+import random
+def compare(userChoice,computerChoice,userScore=0,computerScore=0):
+    if userChoice == computerChoice:
+        print("The choices are the same. No points.")
+        return userScore,computerScore
+    if userChoice == "R":
+        print("Your choice : R")
+        if computerChoice == "S":
+            print("Computer choice : S")
+            print("You win.")
+            userScore += 1
+            return "Your score : ",userScore,"Computer score : ",computerScore
+        elif computerChoice == "P":
+            print("Computer choice : P")
+            print("Computer win.")
+            computerScore += 1
+            return "Your score : ",userScore,"Computer score : ",computerScore
+    if userChoice == "S":
+        print("Your choice : S")
+        if computerChoice == "P":
+            print("Computer choice : P")
+            print("You win.")
+            userScore += 1
+            return "Your score : ",userScore,"Computer score : ",computerScore
+        elif computerChoice == "R":
+            print("Computer choice : R")
+            print("Computer win.")
+            computerScore += 1
+            return"Your score : ",userScore,"Computer score : ",computerScore  
+    if userChoice == "S":
+        print("Your choice : S")
+        if computerChoice == "P":
+            print("Computer choice : P")
+            print("You win.")
+            userScore += 1
+            return "Your score : ",userScore,"Computer score : ",computerScore
+        elif computerChoice == "R":
+            print("Computer choice : R")
+            print("Computer win.")
+            computerScore += 1
+            return "Your score : ",userScore,"Computer score : ",computerScore
+isGameOver = False
+while isGameOver == False:
+    print("Rock --> R\nPaper --> P\nScissors --> S")
+    userChoice = input("Choose one:")
+    computerChoice = random.choice(["R","P","S"])
+    compare(userChoice,computerChoice)
+    gameOver = input("Do you want to end the game? (yes or no):")
+    if gameOver == "yes":
+        isGameOver = True
+    elif gameOver == "no":
+        isGameOver = False
