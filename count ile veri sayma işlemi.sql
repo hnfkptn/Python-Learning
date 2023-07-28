@@ -1,0 +1,4 @@
+--count sayma için kullanılır.
+--bir tabloda kaç tane veri olduğunu hesaplar.
+--select count(*) from musteri
+--select count(*) from musteri where sehir = 'ısparta'

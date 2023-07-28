@@ -1,0 +1,11 @@
+--delete from musteri where id=10
+--select * from musteri
+
+--delete sorgusu ile silme işlemi yapılır.
+--syntax'ı select ile benzerdir.
+--yapılan işlem belirtilir, nereden yapılacağı söylenir,
+--koşul için where kullanılır ve koşul ifadesi yazılır.
+--query tool üzerinde aynı anda birden fazla sorgu  yapılamadığından
+--bu işlemleri teker teker çalıştıralım.
+--olmayan bir kayıt silinmeye çalıştığında işlem başarıyla sonuçlandı
+--ama hiçbir şey silinmedi sonucunu alırız.

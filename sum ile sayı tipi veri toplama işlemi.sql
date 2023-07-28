@@ -1,0 +1,6 @@
+--bir sütun içinde belirtilen integer ifadelerinin toplamını veren
+--sorgu ifadesi sum anahtar sözcüğüdür.
+--bu şekilde sayı tipinde olan bütün ifadelerin belirlenen sütun
+--içinde toplamı hesaplanabilir.
+--select sum(bakiye) from musteri
+--select sum(bakiye) from musteri where sehir ='ısparta'
